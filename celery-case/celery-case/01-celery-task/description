@@ -1,0 +1,24 @@
+1. periodic-task.py (定时任务文件)
+
+    1. 开启定时任务的调度者 beat
+
+        celery -A periodic-task beat
+
+    2. 开启工作消费者 worker
+
+        celery -A periodic-task worker
+
+
+2. task.py 异步任务文件
+
+    1. 开启工作消费者 worker
+
+        celery -A periodic-task worker
+
+    2. 调用异步任务
+
+        cmd --> python
+
+        import tasks
+
+        res = add.delay(5, 20)

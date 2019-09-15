@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script src="static/lib/jQuery/jquery-2.1.4.js"></script>
+</head>
+<body>
+<p>index</p>
+
+
+<input type="hidden" class="pay" onclick="pay_page(this)">
+
+<p id="pay">{{ pay_url }}</p>
+
+
+</body>
+
+<script>
+
+
+    $(function(){
+
+        let pay = $('#pay').text()
+        location.href = pay;
+
+    })
+
+
+
+
+</script>
+</html>

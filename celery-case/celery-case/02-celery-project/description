@@ -1,0 +1,16 @@
+1. 项目的 celery.py 文件中创建 celery 对象, 指名项目的异步任务文件的位置
+
+    app = Celery(
+            'project_celery',                                   # celery 异步任务的名字
+             broker='redis://:mincoroot_924@127.0.0.1:6379',
+             backend='redis://:mincoroot_924@127.0.0.1:6379',
+             include=['project_celery.tasks']                   # 指名任务的位置
+             )
+
+2. 为项目开启 worker
+
+    --> celery -A project_celery worker -l info
+
+3. 调用异步任务
+
+    --> 任务函数名. delay()

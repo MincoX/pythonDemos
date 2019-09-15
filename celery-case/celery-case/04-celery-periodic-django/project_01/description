@@ -1,0 +1,20 @@
+1. 进入项目的根目录下, 开启工作者, 开启 django-beat 任务调度者
+
+    celery -A project_01 worker -l info                 # 开启 worker
+    celery -A project_01 beat   -l info -S django       # 开启 beat 调度者
+
+2. 添加定时任务
+
+    进入 django 的 admin 后台
+
+    1. 添加定时器, 包括 Intervals, Crontabs
+
+        Intervals: 指定简单的时间
+
+        Crontabs: 指定复杂的时间
+
+    2. Periodic tasks 添加指定的任务, 选择上面定义好指定的时间
+
+
+
+

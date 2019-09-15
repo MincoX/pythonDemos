@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/lib/jQuery/jquery-2.1.4.js"></script>
+</head>
+<body>
+<h1>支付完成界面</h1>
+</body>
+
+<script>
+
+    var alipay_result = document.location.search.substr(1);
+    console.info(alipay_result)
+
+    $(function(){
+        $.ajax({
+            url: '/pay_result',
+            type: 'put',
+            dataType: 'json',
+            data: alipay_result,
+
+        })
+    })
+
+</script>
+
+
+</html>
